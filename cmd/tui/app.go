@@ -35,7 +35,7 @@ func main() {
 
 		var keyCode, modifiers = readBuffer(buf[0:n])
 
-		fmt.Println(keyCode, " > ", modifiers, " > ", buf[0:n], string(buf[0:n]))
+		fmt.Println(keyCode, " > ", string(keyCode.GetValue()), " > ", modifiers, " > ", buf[0:n], string(buf[0:n]))
 	}
 }
 
@@ -174,6 +174,18 @@ func readBuffer(b []byte) (KeyCode, Modifiers) {
 		keyTxt = bufTxt
 	}
 
+	// Special cases
+	switch bufTxt {
+	case "\x1bOP":
+		return KeyF1, 0
+	case "\x1bOQ":
+		return KeyF2, 0
+	case "\x1bOR":
+		return KeyF3, 0
+	case "\x1bOS":
+		return KeyF4, 0
+	}
+
 	if slices.Equal(b, []byte{194, 163}) {
 		return KeyPoundSterlingSymbol, 0
 	}
@@ -189,19 +201,13 @@ func readBuffer(b []byte) (KeyCode, Modifiers) {
 
 	var keyCode2, found = KeyCodes[int(keyTxt[0])]
 	if !found {
+		// We don't support all control characters (0 -> 32).
+		if len(b) == 1 && b[0] <= 31 {
+			return KeyNone, 0
+		}
+
 		log.Fatalf("Unexpected key value of %v %v", keyTxt, b)
 	}
 
 	return keyCode2, 0
 }
-
-// model, view, controller
-
-// window system -> register a region
-
-// |-----------|-----|
-// |           |     |
-// |           |     |
-// |           |     |
-// |-----------|-----|
-// |-----------|-----|

@@ -2,6 +2,19 @@ package main
 
 type KeyCode int
 
+func (k KeyCode) GetValue() rune {
+	switch {
+	case k > 31 && k < 127:
+		return rune(k)
+	case k == KeyPoundSterlingSymbol:
+		return rune('£')
+	case k == KeyNumPad5:
+		return rune(KeyD5)
+	default:
+		return rune(KeyNone)
+	}
+}
+
 const (
 	KeyNone                KeyCode = 0   // Null character.
 	KeyBackspace           KeyCode = 8   // The BACKSPACE key.
