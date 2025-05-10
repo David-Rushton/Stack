@@ -47,6 +47,28 @@ func readBuffer(b []byte) (KeyCode, Modifiers) {
 	var keyCode KeyCode
 	var modifierTxt = "0"
 
+	// conceptual model
+	//
+	//
+	//      model | views
+	//           app
+	//  events | signals | ui
+	//
+	// ui
+	// logic
+	// persistence
+
+
+	// 
+	// 
+	// 
+	// 
+	// 
+	// 
+	// 
+	// 
+
+
 	// Terminal input sequences.
 	// See also: https://en.wikipedia.org/wiki/ANSI_escape_code#Terminal_input_sequences
 	if isInputSequence {
