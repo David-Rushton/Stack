@@ -4,6 +4,7 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
+	"time"
 
 	"github.com/David-Rushton/console"
 )
@@ -47,6 +48,7 @@ func (a *app) startConsoleMonitor() {
 	for a.IsRunning {
 		rows, columns, err = console.GetSize()
 		if err != nil {
+			// TODO: Could lead to log spam.  At some point should we fail?
 			a.Log.Errorf("Cannot get console screen size because %v\n", err)
 		}
 
@@ -57,6 +59,8 @@ func (a *app) startConsoleMonitor() {
 
 			a.Log.Informationf("Console screen resized to %v by %v", a.Columns, a.Rows)
 		}
+
+		time.Sleep(time.Millisecond * 350)
 	}
 }
 
