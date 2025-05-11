@@ -1,5 +1,10 @@
 {
     "cSpell.words": [
-        "Blackslash"
+        "Blackslash",
+        "Errorln",
+        "Informationf",
+        "Informationln",
+        "Warningf",
+        "Warningln"
     ]
 }
