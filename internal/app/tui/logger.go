@@ -56,62 +56,62 @@ func newLogger() *tuiLogger {
 	}
 }
 
-func (l *tuiLogger) LogInformation(v ...any) {
+func (l *tuiLogger) Information(v ...any) {
 	l.infoLogger.Print(v...)
 }
 
-func (l *tuiLogger) LogInformationf(format string, v ...any) {
+func (l *tuiLogger) Informationf(format string, v ...any) {
 	l.infoLogger.Printf(format, v...)
 }
 
-func (l *tuiLogger) LogInformationln(v ...any) {
+func (l *tuiLogger) Informationln(v ...any) {
 	l.infoLogger.Println(v...)
 }
 
-func (l *tuiLogger) LogWarning(v ...any) {
+func (l *tuiLogger) Warning(v ...any) {
 	l.warningLogger.Print(v...)
 }
 
-func (l *tuiLogger) LogWarningf(format string, v ...any) {
+func (l *tuiLogger) Warningf(format string, v ...any) {
 	l.warningLogger.Printf(format, v...)
 }
 
-func (l *tuiLogger) LogWarningln(v ...any) {
+func (l *tuiLogger) Warningln(v ...any) {
 	l.warningLogger.Println(v...)
 }
 
-func (l *tuiLogger) LogError(v ...any) {
+func (l *tuiLogger) Error(v ...any) {
 	l.errorLogger.Print(v...)
 }
 
-func (l *tuiLogger) LogErrorf(format string, v ...any) {
+func (l *tuiLogger) Errorf(format string, v ...any) {
 	l.errorLogger.Printf(format, v...)
 }
 
-func (l *tuiLogger) LogErrorln(v ...any) {
+func (l *tuiLogger) Errorln(v ...any) {
 	l.errorLogger.Println(v...)
 }
 
-func (l *tuiLogger) LogFatal(v ...any) {
+func (l *tuiLogger) Fatal(v ...any) {
 	l.fatalLogger.Fatal(v...)
 }
 
-func (l *tuiLogger) LogFatalf(format string, v ...any) {
+func (l *tuiLogger) Fatalf(format string, v ...any) {
 	l.fatalLogger.Fatalf(format, v...)
 }
 
-func (l *tuiLogger) LogFatalln(v ...any) {
+func (l *tuiLogger) Fatalln(v ...any) {
 	l.fatalLogger.Fatalln(v...)
 }
 
-func (l *tuiLogger) LogPanic(v ...any) {
+func (l *tuiLogger) Panic(v ...any) {
 	l.panicLogger.Panic(v...)
 }
 
-func (l *tuiLogger) LogPanicf(format string, v ...any) {
+func (l *tuiLogger) Panicf(format string, v ...any) {
 	l.panicLogger.Panicf(format, v...)
 }
 
-func (l *tuiLogger) LogPanicln(v ...any) {
+func (l *tuiLogger) Panicln(v ...any) {
 	l.panicLogger.Panicln(v...)
 }
