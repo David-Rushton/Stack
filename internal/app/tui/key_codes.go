@@ -17,6 +17,7 @@ func (k KeyCode) GetValue() rune {
 
 const (
 	KeyNone                KeyCode = 0   // Null character.
+	KeyEndOfText           KeyCode = 3   // Terminates text.
 	KeyBackspace           KeyCode = 8   // The BACKSPACE key.
 	KeyTab                 KeyCode = 9   // The TAB key.
 	KeyLineFeed            KeyCode = 10  // The LF key.

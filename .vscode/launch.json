@@ -10,7 +10,9 @@
             "request": "launch",
             "console": "externalTerminal",
             "mode": "auto",
-            "program": "${workspaceFolder}\\cmd\\tui"
+            "program": "${workspaceFolder}/cmd/test",
+            "args": [
+            ]
         }
     ]
 }
