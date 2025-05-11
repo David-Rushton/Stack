@@ -1,4 +1,4 @@
-package main
+package tui
 
 type KeyEvent struct {
 	KeyCode   KeyCode

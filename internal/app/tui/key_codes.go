@@ -1,4 +1,4 @@
-package main
+package tui
 
 type KeyCode int
 

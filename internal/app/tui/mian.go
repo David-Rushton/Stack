@@ -1,4 +1,4 @@
-package main
+package tui
 
 import (
 	"bufio"
@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func main() {
+func maniac() {
 
 	reader := bufio.NewReader(os.Stdin)
 
